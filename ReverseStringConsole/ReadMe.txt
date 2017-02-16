@@ -2,6 +2,8 @@
     CONSOLE APPLICATION : ReverseStringConsole Project Overview
 ========================================================================
 
+A simple example reverse string algorithm using xor.
+
 AppWizard has created this ReverseStringConsole application for you.
 
 This file contains a summary of what you will find in each of the files that
