@@ -2,26 +2,28 @@
 //
 
 #include "stdafx.h"
-#include <string.h>
+#include <string>
+#include <iostream>
 
 int main(int argc, char * argv[])
 {
 	// Use first argument
 	if (argv[1] != NULL) 
 	{
-		char *szInputString = argv[1];
-		int nLast = (int)strlen(szInputString) - 1;
+		char *InputString = argv[1];
+		int LastIndex = (int)strlen(InputString) - 1;
 		// swap characters using XOR at first and last index
 		// then traverse to the middle
-		for (int nStart = 0; nStart < nLast; nStart++)
+		for (int StartIndex = 0; StartIndex < LastIndex; StartIndex++)
 		{
-			szInputString[nStart] = szInputString[nStart] ^ szInputString[nLast];
-			szInputString[nLast] = szInputString[nLast] ^ szInputString[nStart];
-			szInputString[nStart] = szInputString[nLast] ^ szInputString[nStart];
-			nLast--;
+			InputString[StartIndex] = InputString[StartIndex] ^ InputString[LastIndex];
+			InputString[LastIndex] = InputString[LastIndex] ^ InputString[StartIndex];
+			InputString[StartIndex] = InputString[LastIndex] ^ InputString[StartIndex];
+			LastIndex--;
 		}
 		// output reversed string
-		printf("%s\n", szInputString);
+		// printf("%s\n", InputString);
+		std::cout << InputString << std::endl;
 	}
 	return 0;
 }
